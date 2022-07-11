@@ -582,6 +582,7 @@ MonoBehaviour:
   octaves: 4
   worldOffset: 0
   seed: 71499
+  TerrainRegions: []
 --- !u!4 &1612004364
 Transform:
   m_ObjectHideFlags: 0

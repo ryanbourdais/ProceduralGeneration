@@ -166,14 +166,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a2cd17037bc0e4491b61038e62ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawMode: 1
   mapWidth: 100
   mapHeight: 100
-  noiseScale: 6.95
-  octaves: 4
-  persistance: 0.967
+  noiseScale: 25
+  octaves: 5
+  persistance: 0.5
   lacunarity: 2
-  seed: 10
-  offset: {x: -10.68, y: 0}
+  seed: 0
+  offset: {x: 0, y: 0}
+  regions:
+  - name: Water Deep
+    height: 0.3
+    color: {r: 0.079476655, g: 0.17087111, b: 0.8867924, a: 0}
+  - name: Water Shallow
+    height: 0.4
+    color: {r: 0.2680648, g: 0.22877358, b: 0.9150943, a: 0}
+  - name: Sand
+    height: 0.45
+    color: {r: 0.7503053, g: 0.7924528, b: 0.42986828, a: 0}
+  - name: Grass
+    height: 0.55
+    color: {r: 0.11921501, g: 0.5377358, b: 0.11921501, a: 0}
+  - name: Grass 2
+    height: 0.6
+    color: {r: 0.08957815, g: 0.5754717, b: 0.08957815, a: 0}
+  - name: Rock
+    height: 0.7
+    color: {r: 0.33962262, g: 0.2921316, b: 0.16820931, a: 0}
+  - name: Rock2
+    height: 0.9
+    color: {r: 0.2924528, g: 0.24884199, b: 0.1448469, a: 1}
+  - name: Snow
+    height: 1
+    color: {r: 1, g: 1, b: 1, a: 0}
   autoUpdate: 1
 --- !u!4 &586104948
 Transform:
@@ -183,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586104945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -472, y: 0, z: 893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
