@@ -34,7 +34,7 @@ public class MapGenerator : MonoBehaviour
         }
         if (mapHeight < 1)
         {
-            mapWidth = 1;
+            mapHeight = 1;
         }
         if (lacunarity < 1)
         {

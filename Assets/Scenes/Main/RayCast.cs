@@ -15,7 +15,10 @@ public class RayCast : MonoBehaviour
             if(hit.collider.tag == "ground")
             {
                 this.transform.position = new Vector3(transform.position.x, transform.position.y - hit.distance, transform.position.z);
+                Destroy(GetComponent<RayCast>());
             }
+            if(this.transform.position.y == 100)
+                { Destroy(gameObject);}
         }
     }
 }
