@@ -14,12 +14,12 @@ public class TerrainGenerator : MonoBehaviour
     private int seed;
 
     private float worldOffset = 0;
-    private float offsetZ = 0;
-    private float offsetX = 0;
+    // private float offsetZ = 0;
+    // private float offsetX = 0;
     public float _offsetX = 0f;
     public float _offsetZ = 0f;
-    private float offset = 7.9844f;
-    private float newoffset = 0f;
+    // private float offset = 7.9844f;
+    // private float newoffset = 0f;
     private Terrain terrain;
 
     void Start() 
