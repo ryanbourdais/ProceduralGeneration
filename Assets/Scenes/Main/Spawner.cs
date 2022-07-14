@@ -11,27 +11,32 @@ public class Spawner : MonoBehaviour
     private float positionX;
     private float positionZ;
     private int objectToSpawnIndex = 0;
+    private float spawnerPositionX;
+    private float spawnerPositionZ;
 
     void Start()
     {
-        for(int i = 0; i < itemsToSpawn; i++)
+       Spawn();
+    }
+
+    public void Spawn()
+    {
+        spawnerPositionX = this.transform.position.x;
+        spawnerPositionZ = this.transform.position.z;
+        
+       for(int i = 0; i < itemsToSpawn; i++)
         {
             objectToSpawnIndex = Random.Range(0, objectsToSpawn.Length);
 
             objectToSpawn = objectsToSpawn[objectToSpawnIndex];
 
-            positionX = Random.Range(-spawnRange,spawnRange) + spawnRange;
-            positionZ = Random.Range(-spawnRange,spawnRange) + spawnRange;
+            positionX = Random.Range(-spawnRange + spawnerPositionX ,spawnRange + spawnerPositionX);
+            positionZ = Random.Range(-spawnRange + spawnerPositionZ,spawnRange + spawnerPositionZ);
 
             Instantiate(objectToSpawn, new Vector3(positionX, this.transform.position.y, positionZ), Quaternion.identity);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1, 0, 0, 0.1f);

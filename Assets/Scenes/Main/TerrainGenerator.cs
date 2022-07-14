@@ -3,51 +3,41 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
-    private int depth;
-
-    private int width;
-    private int height;
-    private int octaves;
-    private float persistance;
-    private float lacunarity;
-    private float scale;
-    private int seed;
-
-    private float worldOffset = 0;
-    // private float offsetZ = 0;
-    // private float offsetX = 0;
+    [Range(0,100)]
+    public int depth = 20;
+    [Range(513,1024)]
+    public int width = 513; 
+    [Range(513,1024)]
+    public int height = 513;
+    [Range(0,100)]
+    public float scale = 8;
+    public AnimationCurve heightCurve;
+    [Range(0,1)]
+    public float persistance = .5f;
+    [Range(0,2)]
+    public float lacunarity = 2f;
+    [Range(1,10)]
+    public int octaves =  4;
+    public float worldOffset = 0f;
+    public int seed = 0;
     public float _offsetX = 0f;
     public float _offsetZ = 0f;
-    // private float offset = 7.9844f;
-    // private float newoffset = 0f;
-    private Terrain terrain;
+    public Terrain terrain;
+    public bool autoUpdate;
 
-    void Start() 
-    {
-        
-        depth = PerlinGenerator.getDepth();
-        width = PerlinGenerator.getWidth();
-        height = PerlinGenerator.getHeight();
-        scale = PerlinGenerator.getScale();
-        persistance = PerlinGenerator.getPersistance();
-        lacunarity = PerlinGenerator.getLacunarity();
-        octaves = PerlinGenerator.getOctaves();
-        worldOffset = PerlinGenerator.getWorldOffset();
-        seed = PerlinGenerator.getSeed();
-        
+    void Awake() 
+    {    
         terrain = GetComponent<Terrain>();
-        terrain.terrainData = GenerateTerrain(terrain.terrainData);
+        GenerateTerrain();
     }
 
-    TerrainData GenerateTerrain (TerrainData terrainData)
+    public void GenerateTerrain ()
     {
-        terrainData.heightmapResolution = width + 1;
+        terrain.terrainData.heightmapResolution = width + 1;
 
-        terrainData.size = new Vector3 (width, depth, height);
+        terrain.terrainData.size = new Vector3 (width, depth, height);
 
-        terrainData.SetHeights(0, 0, GenerateHeights());
-
-        return terrainData;
+        terrain.terrainData.SetHeights(0, 0, GenerateHeights());
     }
 
     float [,] GenerateHeights ()
@@ -86,7 +76,7 @@ public class TerrainGenerator : MonoBehaviour
                     float yCoord = ((float)y - halfHeight) / scale * frequency + octaveOffsets[i].y + _offsetZ;
 
                     float perlinValue = Mathf.PerlinNoise(xCoord, yCoord) * 2 - 1;
-                    noiseHeight += perlinValue * amplitude;
+                    noiseHeight += perlinValue * amplitude * heightCurve.Evaluate(perlinValue) ;
 
                     amplitude *= persistance;
                     frequency *= lacunarity;
