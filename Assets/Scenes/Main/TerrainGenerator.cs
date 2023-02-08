@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
@@ -64,7 +63,6 @@ public class TerrainGenerator : MonoBehaviour
         {
             for(int y = 0; y < height; y++)
             {
-                {
                     float amplitude = 1;
                     float frequency = 1;
                     float noiseHeight = 0;
@@ -90,7 +88,6 @@ public class TerrainGenerator : MonoBehaviour
                         minNoiseHeight = noiseHeight;
                     }
                     heights[x,y] = noiseHeight;
-                }
             }
         }
         for(int y = 0; y < height; y++)

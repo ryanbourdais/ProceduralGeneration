@@ -154,7 +154,6 @@ Transform:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 106278578}
-  - {fileID: 1612004364}
   - {fileID: 524732279}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -231,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106278574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 32.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -253,24 +252,87 @@ MonoBehaviour:
   depth: 30
   width: 1024
   height: 1024
-  scale: 29.1
+  scale: 40.5
   heightCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0.14551176
+      value: 1.6654936
+      inSlope: 1.7009628
+      outSlope: 1.7009628
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.29795718
+      value: -0.41037408
+      inSlope: -0.6782241
+      outSlope: -0.6782241
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.39385137
+      value: -0.13414457
+      inSlope: 3.137462
+      outSlope: 3.137462
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.47081065
+      value: 1.3388939
+      inSlope: 2.3836856
+      outSlope: 2.3836856
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5439598
+      value: 0.00029575825
+      inSlope: -1.5666412
+      outSlope: -1.5666412
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.64879787
+      value: 0.85101336
+      inSlope: 3.7074916
+      outSlope: 3.7074916
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.72337645
+      value: 1.5947663
+      inSlope: 0.49180016
+      outSlope: 0.49180016
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -278,15 +340,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  persistance: 0.5
-  lacunarity: 0.56
-  octaves: 8
+  persistance: 1
+  lacunarity: 0.5
+  octaves: 4
   worldOffset: 0
   seed: 0
   _offsetX: 0
   _offsetZ: 0
   terrain: {fileID: 106278577}
-  autoUpdate: 1
+  autoUpdate: 0
 --- !u!1 &524732277
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,8 +386,8 @@ MonoBehaviour:
   - {fileID: 77771450542905185, guid: 2129daeec990bad46813966b36a72769, type: 3}
   - {fileID: 3579633770686552209, guid: 9a69e2dfc8acb714fad3a987aceae26f, type: 3}
   - {fileID: 4282091917214927025, guid: d82746ce1da04ff418e3554191b874ed, type: 3}
-  spawnRange: 256
-  itemsToSpawn: 2
+  spawnRange: 511
+  itemsToSpawn: 1000
 --- !u!4 &524732279
 Transform:
   m_ObjectHideFlags: 0
@@ -334,12 +396,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524732277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 256, y: 100, z: 256}
+  m_LocalPosition: {x: 512, y: 100, z: 512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 57085148}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -511,42 +573,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.04644887, y: 0.9349979, z: -0.13390481, w: -0.32510135}
-  m_LocalPosition: {x: 856.67365, y: -40.36824, z: 595.1859}
+  m_LocalRotation: {x: 0.1372547, y: 0.82168686, z: -0.21922669, w: 0.50786966}
+  m_LocalPosition: {x: -92.818375, y: 132.4789, z: 460.15103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 57085148}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1612004362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1612004364}
-  m_Layer: 0
-  m_Name: Terrain Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1612004364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612004362}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -158.0285, y: -20.34314, z: -443.1461}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 57085148}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
